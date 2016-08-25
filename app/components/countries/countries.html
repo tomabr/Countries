@@ -1,0 +1,26 @@
+<uib-accordion close-others="oneAtATime">
+  <div uib-accordion-group class="panel panel-default"
+  ng-repeat="(continentName, countries) in countriesCtrl.continents">
+    <uib-accordion-heading>
+      <label>
+      <input type="checkbox" ng-model="countries.checked"
+      ng-click="countriesCtrl.checkAllCountries(continentName, $event)">
+      {{ continentName }}
+      </label>
+    </uib-accordion-heading>
+
+    <div class="panel-body">
+        <div>Amount Countries: {{ countries.countries.length }}</div>
+        <div ng-show="countries.amountSelectedCountries">Active Countries: {{countries.amountSelectedCountries}}</div>
+        <span ng-click="countriesCtrl.sortBy(continentName)" class="btn btn-default">Sort</span>
+    </div>
+
+    <ul class="list-group">
+      <li ng-repeat="country in countries.countries | orderBy:'name':countries.reverse" class="list-group-item" ng-disabled="!country.checked"
+       ng-class="{disabled: !country.checked}">
+        <label>
+          <input type="checkbox" ng-model="country.checked" ng-click="countriesCtrl.checkContinentChecbox(continentName)"> {{country.name}}</label>
+      </li>
+    </ul>
+  </div>
+</uib-accordion>

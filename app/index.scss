@@ -1,0 +1,5 @@
+// Imports will go here to import other component's style.
+// This allows for sharing of global variables.
+@import 'bourbon';
+@import "~components/home/home.scss";
+@import "~components/countries/countries.scss";
