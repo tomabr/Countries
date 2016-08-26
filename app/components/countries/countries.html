@@ -2,7 +2,7 @@
   <div uib-accordion-group class="panel panel-default"
   ng-repeat="(continentName, countries) in countriesCtrl.continents">
     <uib-accordion-heading>
-      <label>
+      <label class="label-w">
       <input type="checkbox" ng-model="countries.checked"
       ng-click="countriesCtrl.checkAllCountries(continentName, $event)">
       {{ continentName }}
@@ -18,7 +18,7 @@
     <ul class="list-group">
       <li ng-repeat="country in countries.countries | orderBy:'name':countries.reverse" class="list-group-item" ng-disabled="!country.checked"
        ng-class="{disabled: !country.checked}">
-        <label>
+        <label class="label-w">
           <input type="checkbox" ng-model="country.checked" ng-click="countriesCtrl.checkContinentChecbox(continentName)"> {{country.name}}</label>
       </li>
     </ul>
