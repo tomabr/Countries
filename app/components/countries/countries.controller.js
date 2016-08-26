@@ -1,3 +1,5 @@
+import toastr from 'toastr';
+
 export default class CountriesController {
   constructor(countriesApi) {
     this.name = 'countries';
@@ -21,7 +23,7 @@ export default class CountriesController {
 
           this.continents = continents;
         },
-        error => {});
+        error => {toastr.error(error.message);});
   }
 
   checkContinentChecbox(name) {

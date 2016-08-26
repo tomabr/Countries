@@ -6,6 +6,7 @@ import appComponents from './components/components.js';
 import appServices from './services/services.js';
 import appConfiguration from './app.config';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/toastr/build/toastr.min.css';
 
 // Single Style Entry Point
 import './index.scss';
